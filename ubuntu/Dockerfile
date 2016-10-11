@@ -8,7 +8,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     pip install -U pip && \
     pip install awscli
 
-ADD entry.sh /
+COPY entry.sh /
 
 WORKDIR /
 
