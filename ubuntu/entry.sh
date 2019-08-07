@@ -6,7 +6,7 @@ echo "DYNAMODB_TABLE=$DYNAMODB_TABLE"
 echo "AWS_REGION=$REGION"
 
 function get_region {
-    export AZ=$(curl http://169.254.169.254/latest/meta-data/placement/availability-zone 2>/dev/null)
+    export AZ=$(wget -O - http://169.254.169.254/latest/meta-data/placement/availability-zone 2>/dev/null)
     export REGION=${AZ::-1}
     echo "Availability Zone=$AZ and AWS_REGION=$REGION"
 }
